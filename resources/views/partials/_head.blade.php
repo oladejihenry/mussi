@@ -22,6 +22,10 @@
                     <div class="bar2"></div>
                     <div class="bar3"></div>
                 </div>
+                <div class="logo">
+                    <a href="/">Musigent</a>
+                </div>
+            
             </div>
             <nav>
                 <ul>
