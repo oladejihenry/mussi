@@ -35,8 +35,6 @@ services:
             - sail
         healthcheck:
           test: ["CMD", "mysqladmin", "ping"]
-
-
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         restart: always

@@ -21,16 +21,12 @@
                     <div class="bar1"></div>
                     <div class="bar2"></div>
                     <div class="bar3"></div>
-                </div>
-                <div class="logo">
-                    <a href="/">Musigent</a>
-                </div>
-            
+                </div>  
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#" class="button">Register</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register" class="button">Register</a></li>
                 </ul>
             </nav>
         </div>
