@@ -8,7 +8,7 @@
     <title>Musical</title>
 </head>
 <body>
-<header class="hero">
+<header class="hero"> 
     <div id="monstaNav" class="sidenav" style="width:0px;">
         <a href="javascript:void(0)" class="closebtn" onlick="closeNav()"></a>
         <a href="/">Home</a>
@@ -26,7 +26,7 @@
             <nav>
                 <ul>
                     <li><a href="#">Login</a></li>
-                    <li><a href="#">Register</a></li>
+                    <li><a href="#" class="button">Register</a></li>
                 </ul>
             </nav>
         </div>

@@ -17,7 +17,7 @@ ul{
 #body{
     transition: all .5s;
 }
-/*Navbar*/
+
 #navbar {
     transition: all .5s;
 }
@@ -31,7 +31,7 @@ ul{
     top:0px;
     padding:0 30px;
     position:fixed;
-    background:#000;
+    background:#2D3243;
 }
 
 .navbar a{
@@ -43,6 +43,16 @@ ul{
 
 .navbar ul{
     display:flex;
+}
+.button{
+    background-color: #1c87c9;
+    border-radius: 5px;
+    color: white;
+    padding: 20px 34px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 .transition{
     transform: translateX(250px);
@@ -56,6 +66,18 @@ ul{
     display: inline-block;
     cursor:pointer;
     padding-top: 10px;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+.change .bar2 {
+    opacity: 0;
+}
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
 }
 .bar1, .bar2, .bar3{
     width:35px;
@@ -73,6 +95,40 @@ ul{
     transition: 0.5s;
     position:fixed;
     z-index:1;
+}
+.first-img{
+    background: url(../images/ll.jpg) no-repeat center center/cover;
+    height: 55vh;
+    color: white;
+    z-index: 10;
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    padding: 0 20px;
+    justify-content: center;
+}
+.first-img span{
+    color:#2D3243;
+}
+.submit-form{
+    padding:20px 0;
+}
+.submit-form input{ 
+    width:50%;
+    padding:4px;
+    height:40px;
+    border: 1px solid #f5f5f5;
+    font-size:15px;
+}
+.submit-form button{
+    width:100px;
+    height:50px;
+    border:1px solid rgb(28,135,201,1);
+    background:rgb(28,135,201,1);
+    font-size:15px;
+    border-radius:5px;
+    cursor:pointer;
+    color:#fff;
 }
 @media(min-width:450px){
     .sidenav{
