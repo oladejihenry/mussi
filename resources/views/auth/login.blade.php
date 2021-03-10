@@ -18,13 +18,15 @@
                 <input type="password" name="password" placeholder="Enter Password" required autocomplete="current-password">
             </div>
             <button class="btn">{{ __('Log in') }}</button>
+            <br>
+            <hr>
+            <br>
             @if (Route::has('password.request'))
                 <a href="{{ route('password.request') }}">
                 {{ __('Forgot your password?') }}
                 </a>
+                <br>
             @endif
-            <hr>
-            <a href="/register" style="padding-top:9px;">Click Here To Register</a>
         </form>
     </div>
 </section>
