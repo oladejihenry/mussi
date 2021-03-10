@@ -1,3 +1,4 @@
+@extends('main')
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -45,15 +46,16 @@
                                 name="password_confirmation" required />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            
+                
+                <button class="btn">{{ __('Register') }}</button>
+                <br>
+                <hr>
+                <br>
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
+            
         </form>
     </x-auth-card>
 </x-guest-layout>
