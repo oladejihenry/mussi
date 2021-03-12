@@ -1,0 +1,807 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+nav .logo {
+	height: 40px;
+}
+
+nav {
+	width: 100%;
+    padding: 19px 16px;
+}
+
+.company-header {
+	background-color: #fff;
+}
+
+.company-header .img {
+	background-color: #000;
+	background-image: url(../imag/blur.jpg);
+	background-position: center;
+	background-size: cover;
+	height: 30px;
+}
+
+.company-header #details {
+	padding: 20px;
+}
+
+.company-header .header {
+	margin-bottom: 30px !important;
+	margin-top: 0 !important;
+}
+
+.company-header .claim {
+	color: #333;
+	font-weight: lighter;
+	transition: font-weight 0.6s;
+}
+
+.company-header .claim:hover {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.company-header .claim i {
+	color: #ff4943;
+	margin-right: 5px;
+	transition: color 0.6s;
+}
+
+.company-header .claim:hover i {
+	color: #0CAA41;
+}
+
+.general-nav {
+	background-color: #436582;
+	padding: 10px;
+	display: block;
+	height: 70px;
+}
+
+.general-nav form .form-control{
+	width: 100%;
+    padding: 12px;
+    border-radius: 7px 0 0 7px;
+    border: 0;
+}
+
+.general-nav form {
+	margin: 0 auto;
+}
+
+.general-nav form button {
+	padding: 12px;
+	padding-right: 16px;
+	border-radius:  0 7px 7px 0;
+}
+
+.general-nav .fa-bars {
+	color: #fff;
+	line-height: 46px;
+}
+
+.general-nav .logo {
+	height: 46px;
+}
+
+.mobile {
+	display: inline-block;
+}
+
+.company-header .mobile{
+	display: block;
+}
+
+.company-header .mobile a {
+	display: block;
+}
+
+.desktop {
+	display: none;
+}
+
+#splash {
+	background-image: url('../images/ll.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #fff;
+}
+
+#splash h1,
+#splash h4 {
+	color: #fff;
+}
+
+#splash .container {
+	padding: 79px 27px;
+	text-align: center;
+}
+
+#splash form {
+	margin: 40px auto;
+}
+
+#splash .form-group {
+	padding: 0;
+}
+
+#splash form input {
+	width: 100%;
+}
+
+.btn {
+	border-radius: 4px;
+    border: 0;
+    padding: 15px;
+}
+
+.btn-primary {
+	background-color: #40c8f4;
+	transition: background-color 0.8s;
+}
+
+.btn-success {
+    padding: 10px 20px;
+	background-color: #0d69b2;
+	transition: background-color 0.8s;
+}
+
+.btn-secondary {
+	border: 1px solid #40c8f4;
+	color: #4f4f4f;
+	background-color: transparent;
+}
+
+.btn-default {
+	border: 1px solid #4f4f4f;
+	color: #4f4f4f;
+	background-color: transparent;
+}
+
+.btn-primary:hover,
+.btn-primary:focus{
+	background-color: #007da5;
+}
+
+.btn-success:hover,
+.btn-success:focus{
+	background-color: #0d69b2;
+}
+
+.btn-default:hover,
+.btn-default:focus{
+	background-color: transparent;
+	color: #4f4f4f;
+	border-color: #4f4f4f;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus{
+	color: #4f4f4f;
+	background-color: transparent;
+	color: #40c8f4;
+	border-color: #4f4f4f;
+}
+
+#splash form input,
+#splash form button {
+	border-radius: 0;
+	font-size: 1.2em;
+    padding: 17px;
+}
+
+#howitworks {
+	text-align: center;
+}
+
+#companyreview {
+	padding: 30px 0px;
+	background-color: #f2f2f2;
+}
+
+#companyreview .review {
+	background-color: #fff;
+	padding: 40px;
+}
+
+.logo-cont {
+	padding: 20px;
+}
+
+.companyreviewlogo{
+	height: 130px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#companyreview .name {
+	color: #333;
+}
+
+#companyreview .pro {
+	margin: 20px auto;
+}
+
+#companyreview .title{
+	color: #3fc9f4;
+    display: block;
+    margin: 13px auto;
+}
+
+#companyreview a:hover,
+#companyreview a:focus {
+	text-decoration: none;
+}
+
+.header {
+	margin: 30px auto;
+	color: #4a4a4a;
+}
+
+.cardcus {
+	padding: 20px;
+	height: 100%;
+}
+
+.cardcus .header {
+	margin: 30px auto !important;
+}
+
+p {
+	color: #848484;
+}
+
+p b {
+	color: #333;
+}
+
+.cardcus img {
+	height: 80px;
+	width: auto;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+#counters {
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-top: 1px solid #d4d4d4;
+	border-bottom: 1px solid #d4d4d4;
+}
+
+#counters h3 {
+	color: #40c8f4;
+}
+
+.counters {
+	margin: 35px auto 10px;
+}
+
+.counters a {
+	color: #848484;
+    border-radius: 15px;
+    border: 1px solid #848484;
+    padding: 5px 15px;
+    margin: 5px auto;
+    display: block;
+    transition: all 0.4s;
+}
+
+.counters a:hover,
+.counters a:focus {
+	color: #40c8f4;
+	border-color: #40c8f4;
+	text-decoration: none;
+}
+
+.margin-three {
+    margin-top: 3% !important;
+    margin-bottom: 3% !important;
+}
+
+.separator-line-thick {
+    height: 4px;
+    margin: 0 auto;
+    width: 30px;
+    margin: 7% auto;
+}
+
+.bg-mid-gray {
+    background: #d4d4d4 !important;
+}
+
+.company-header #links {
+	padding: 15px 30px 0px;
+	z-index: 999 !important;
+	background-color: white;
+}  
+
+.company-header #links .buttons {
+	margin: 5px auto 10px;
+}
+
+.company-header #links .buttons.mobile .btn {
+	margin: 15px auto -6px;
+    padding: 8px;
+    font-size: 12px;
+}
+
+.company-header #links .menu {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.company-header #links .menu ul {
+	list-style-type: none;
+  padding: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+	background:
+		/* Shadow covers */
+		linear-gradient(90deg, white 30%, rgba(255,255,255,0)),
+		linear-gradient(90deg, rgba(255,255,255,0), white 70%) 100% 0,
+		
+		/* Shadows */
+		radial-gradient(0 50%, farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)),
+		radial-gradient(100% 50%,farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)) 100% 0;
+	background:
+		/* Shadow covers */
+		linear-gradient(90deg, white 30%, rgba(255,255,255,0)),
+		linear-gradient(90deg, rgba(255,255,255,0), white 70%) 100% 0,
+		
+		/* Shadows */
+		radial-gradient(farthest-side at 0 50%, rgba(0,0,0,.2), rgba(0,0,0,0)),
+		radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.2), rgba(0,0,0,0)) 100% 0;
+	background-repeat: no-repeat;
+	background-color: white;
+	background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+	
+	/* Opera doesn't support this in the shorthand */
+	background-attachment: local, local, scroll, scroll;
+	margin-bottom: 0;
+}
+
+.company-header #links .menu ul li {
+  display: inline-block;
+}
+
+.company-header #links .menu ul li a {
+  display: inline-block;
+  padding: 0.9em 1em;
+  color: #848484;
+  font-weight: lighter;
+}
+
+.company-header #links .menu ul li a:hover,
+.company-header #links .menu ul li a:focus,
+.company-header #links .menu ul li a.current {
+	color: #3a3a3a;
+	text-decoration: none;
+	border-bottom: 3px solid #3a3a3a;
+	font-weight: normal;
+}
+
+#addedCompanies {
+	padding-top: 0;
+	padding-bottom: 30px;
+	background-color: #f2f2f2;
+	background: linear-gradient(to bottom right, white, #f2f2f2);
+}
+
+#addedCompanies .card-header img {
+	height: 40px;
+	margin-right: 35px;
+}
+
+#addedCompanies .company {
+	background-color: #fff;
+	-webkit-box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2);
+	padding: 25px 20px 0px;
+	text-decoration: none;
+	color: #4a4a4a;
+	margin-bottom: 25px;
+	height: 100%;
+	display: block;
+}
+
+#addedCompanies .col-md-3 {
+	margin-bottom: 25px;
+}
+
+#addedCompanies .company .image {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+#addedCompanies .company img {
+	height: 85px;
+}
+
+.rating {
+	margin: 12px auto;
+}
+
+.rating span{
+	background: #ffd600;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 0.6em;
+    margin-left: 5px;
+}
+
+.body {
+	background-color: #f2f2f2;
+	padding: 10px 0;
+}
+
+#search {
+	background-color: #fff;
+}
+
+#search .results {
+	padding: 5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #404040;
+	font-weight: bold;
+}
+
+#search .result {
+	margin: 30px auto;
+	padding: 20px 0;
+	border-bottom: 1px solid #dedede;
+}
+
+#search .result .review {
+	padding: 11px 20px;
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    margin: 29px 10px;
+}
+
+#sidebar {
+	margin-top: 30px;
+}
+
+#sidebar .signup {
+	background-color: #fff;
+	text-align: center;
+	padding: 40px 20px;
+	border-radius: 5px;
+	margin-bottom: 30px; 
+}
+
+#sidebar .no-result {
+	background: url(../img/cantfind.jpg);
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+	color: #fff !important;
+	padding: 60px 20px;
+	border-radius: 5px;
+	margin-bottom: 30px; 
+}
+
+#sidebar .no-result p {
+	color: #ccc;
+}
+
+#sidebar .no-result .mini-header {
+	color: #fff;
+}
+
+#sidebar .signup img {
+	height: 80px;
+	margin-bottom: 30px;
+}
+
+#company section {
+	background-color: #fff;
+	margin: 20px auto;
+	border-radius: 8px;
+	padding: 25px;
+}
+
+#company section p {
+	font-size: 0.8em;
+}
+
+#company .map {
+	height: 300px;
+	padding: 0;
+}
+
+#company .reviews {
+	border-radius: 0;
+}
+
+#company .reviews th {
+	border: 0;
+}
+
+#company .reviews td .title {
+	margin: 0;
+}
+
+.fa.yes {
+	color: #0CAA41;
+}
+
+.fa.no {
+	color: #ff4943;
+}
+
+.fa.neutral {
+	color: #333;
+}
+
+#company .reviews .yesno {
+	font-size: 0.8em;
+}
+
+#company .reviews td span {
+    font-size: 0.8em;
+    color: #848484;
+    font-weight: lighter;
+}
+
+#company .reviews .suumr {
+	border: 1px solid #212529;
+	padding: 15px;
+}
+
+#company .reviews .suumr p {
+	margin: 0;
+}
+
+#company .reviews .review {
+	border-bottom: 1px solid #e4e4e4;
+	padding: 20px 15px;
+}
+
+#company .reviews .ago {
+	color: #848484;
+	font-size: 0.8em;
+}
+
+#company .reviews a {
+	margin-bottom: 15px;
+}
+
+#company .reviews a q {
+	color: #095fac;
+}
+
+#company .reviews a:hover {
+	text-decoration: none;
+}
+
+#company .reviews .miniRatings{
+    border: 1px solid #ffd600;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 0.6em;
+    font-weight: bold;
+    display: flex;
+    line-height: 14px;
+}
+
+#company .reviews .miniRatings .col {
+    border-right: 1px solid #ffd600;
+    border-bottom: 1px solid #ffd600;
+    margin: 0;
+    padding: 11px 2px;
+}
+
+#company .reviews .miniRatings .col-md-12 span{
+    background: #ffd600;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 600;
+    padding: 4px ;
+    border-radius: 4px;
+    vertical-align: top;
+    display: inline-block;
+    margin: 10px auto 0;
+}
+
+.map iframe {
+	border: 0;
+    height: 100%;
+    display: block;
+    width: 100%;
+}
+
+footer{
+	background-color: #343434;
+	color: #fff;
+	padding: 15px 0;
+	font-size: 0.8em;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color: #fff; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 15px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-bottom: 1px solid #F1F2F2;
+    color: #848484;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav .links {
+	border-top: 1px solid #c2c2c2;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    /*color: #fff;*/
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    border: 0;
+    top: 0;
+    right: 25px;
+    font-size: 28px;
+    margin-left: 50px;
+    -ms-transform: translate(0); /* IE 9 */
+    -webkit-transform: translate(0); /* Safari */
+    transform: translate(0);
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#content {
+    transition: transform .5s;
+    background-color: #f2f2f2;
+    /*padding: 20px;*/
+}
+
+#content .review .col-12 {
+	margin: 8px auto;
+}
+
+.circle {
+    width: 100px;
+    margin: 6px 6px 20px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.circle strong {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 30px;
+}
+
+.circle-text {
+	padding-top: 33px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+@media screen and (min-width: 800px) {
+	#splash .container {
+		padding: 150px;
+		text-align: center;
+	}
+
+	nav {
+		width: 100%;
+	    padding: 26px 45px;
+	}
+
+	nav .logo {
+		height: 60px;
+	}
+
+	#addedCompanies {
+		padding-top: 60px;
+	}
+
+	#howitworks .row {
+		padding: 30px 50px;
+	}
+
+	.company-header #links .menu{
+		margin-bottom: 0;
+	}
+
+	.mobile {
+		display: none !important;
+	}
+
+	.desktop {
+		display: block;
+	}
+
+	.companyreviewlogo{
+		height: 100%;
+	}
+
+	#companyreview {
+		padding: 30px;
+	}
+
+	.body {
+		padding: 40px 0;
+	}
+
+	.general-nav {
+		padding: 13px 40px 10px;
+	}
+
+	#sidebar {
+		margin: 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

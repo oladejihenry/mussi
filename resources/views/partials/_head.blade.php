@@ -1,35 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <title>Musical</title>
-</head>
-<body>
-<header class="hero"> 
-    <div id="monstaNav" class="sidenav" style="width:0px;">
-        <a href="javascript:void(0)" class="closebtn" onlick="closeNav()"></a>
-        <a href="/">Home</a>
-        <a href="music">Music</a>
-    </div>
-    <div id="body" class>
-        <div id="navbar" class="navbar">
-            <div class="col">
-                <div class="animatedMenu" onclick="animatedMenu(this)">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                </div>  
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/register" class="button">Register</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</header> 
-    <main style="padding-top:70px;">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Musical</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="{{asset('css/star-rating-svg.css')}}">
+		<link rel="stylesheet" type="text/css" href="{{asset('css/main.css')}}">
+	</head>
+	<body>
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="navigate()">&times;</a>
+			<div class="links">
+				<a href="#">About</a>
+				<a href="#">Services</a>
+				<a href="#">Clients</a>
+				<a href="#">Contact</a>
+			</div>
+		</div>
+        <div id="content">
