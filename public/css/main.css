@@ -55,7 +55,9 @@ nav {
 .company-header .claim:hover i {
 	color: #0CAA41;
 }
-
+.container span{
+	color:#2D3243;
+}
 .general-nav {
 	background-color: #436582;
 	padding: 10px;
@@ -426,7 +428,8 @@ p b {
 }
 
 #addedCompanies .company img {
-	height: 85px;
+	height: 100%;
+	width:100%;
 }
 
 .rating {

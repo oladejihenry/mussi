@@ -16,6 +16,8 @@
 		<div id="mySidenav" class="sidenav">
 			<a href="javascript:void(0)" class="closebtn" onclick="navigate()">&times;</a>
 			<div class="links">
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
 				<a href="#">About</a>
 				<a href="#">Services</a>
 				<a href="#">Clients</a>
@@ -23,3 +25,12 @@
 			</div>
 		</div>
         <div id="content">
+        <section id="splash">
+            <nav>
+                <div>
+                    <img class="float-left logo" src="img/logo2.png" alt="Kareer Circle"> 
+                    
+                    <i class="fa fa-2x fa-bars float-right" onclick="navigate()"></i>
+                </div>
+            </nav>
+            

@@ -1,8 +1,11 @@
 @extends('main')
 
 @section('body')
-
-<section class="section-padding">
+<div class="container">
+    
+</div>
+</section>
+<section id="addedCompanies">
     <h1 style="text-align:center; padding-bottom:20px;">Log In Here!</h1>
     @error('email')
         <div class="alert alert-danger">{{ $message }}</div>
@@ -29,6 +32,10 @@
             @endif
         </form>
     </div>
-</section>
+
+<section>
+<section id="addedCompanies"></section>
+<section id="addedCompanies"></section>
+<section id="addedCompanies"></section>
 
 @endsection
