@@ -17,8 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+
+
+Route::get('/client', 'ClientController@index');
+
+
+Route::get('/creator', 'CreatorController@index')->middleware('admin','auth');
 
 require __DIR__.'/auth.php';

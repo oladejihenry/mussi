@@ -1,8 +1,7 @@
-@extends('main')
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            
+            Musigent
         </x-slot>
 
         <!-- Validation Errors -->
@@ -31,7 +30,7 @@
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
-
+           
             <!-- Password -->
             <div class="mt-4">
                 <x-label for="password" :value="__('Password')" />
@@ -56,10 +55,24 @@
 
                 <x-input id="email" class="block mt-1 w-full" type="number" name="phone_number" :value="old('phone_number')" required />
             </div>
+            <!--- User Type -->
+            <div class="mt-4">
+                <select name="usertype">
+                    <option>Select Usertype</option>
+                    <option value="1">Hire Creators or Learn</option>
+                    <option value="2">Content Creators</option>
+                </select>
+            </div>
 
             <br>
-                
-                <button class="btn">{{ __('Register') }}</button>
+            <div class="flex items-center justify-end mt-4"> 
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                    {{ __('Already registered?') }}
+                </a>
+                <x-button class="ml-4">
+                    {{ __('Register') }}
+                </x-button>
+            </div>
                 
             
         </form>

@@ -37,6 +37,7 @@ class RegisteredUserController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'username' => 'required|string|max:255|unique:users',
             'phone_number' => 'required|string',
+            'usertype' => 'required|string',
             'password' => 'required|string|confirmed|min:8',
         ]);
 
@@ -45,8 +46,10 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'username' => $request->username,
             'phone_number' => $request->phone_number,
+            'usertype' => $request->usertype,
             'password' => Hash::make($request->password),
         ]));
+       
 
         event(new Registered($user));
 

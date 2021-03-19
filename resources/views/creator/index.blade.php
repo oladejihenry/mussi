@@ -1,0 +1,1 @@
+<h1>Creator {{Auth::user()->name}}</h1>
