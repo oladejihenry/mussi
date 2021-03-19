@@ -18,10 +18,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index');
 
 
+Route::group(['middleware' => ['auth']], function (){
+    Route::get('/client', 'Client\ClientController@index');
+    Route::post('/client-save', );
+});
 
-Route::get('/client', 'ClientController@index');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+Route::group(['middleware' => ['admin', 'auth']], function(){
+    Route::get('/creator', 'Creator\CreatorController@index');
+});
 
 
-Route::get('/creator', 'CreatorController@index')->middleware('admin','auth');
 
 require __DIR__.'/auth.php';

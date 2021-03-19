@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Creator;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ClientController extends Controller
+class CreatorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return view('client.index');
+        return view('creator.index');
     }
 
     /**
