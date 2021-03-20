@@ -31,6 +31,10 @@ Route::group(['middleware' => ['admin', 'auth']], function(){
     //Posts
     Route::get('/creator/all-posts','Creator\PostController@index');
     Route::post('/save-post', 'Creator\PostController@store');
+    Route::delete('/delete-post/{id}','Creator\PostController@destroy');
+    Route::get('/creator/contents-bin','Creator\PostController@trashed');
+    Route::get('/restore/{id}','Creator\PostController@restore')->name('posts.restore');
+    Route::delete('delete-permanently/{id}','Creator\PostController@delete');
 
 
     //Category

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 use App\Models\Post;
@@ -16,6 +17,8 @@ class Post extends Model
 {
     use HasFactory;
     use HasSlug;
+    use SoftDeletes;
+    
     protected $dates = ['deleted_at'];
     protected $table= 'posts';
     protected $fillable=['title','body','image','youtube','price'];

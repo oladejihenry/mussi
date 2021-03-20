@@ -8,7 +8,8 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
 use Auth;
-
+use Image;
+use Storage;
 class PostController extends Controller
 {
     /**
@@ -53,6 +54,7 @@ class PostController extends Controller
 
         $postc=auth()->user()->post()->create($request->all());
         $postc->category()->attach($request->category);
+       
 
         return redirect('/creator/all-posts')->with('success','Updated');
     }
@@ -99,8 +101,33 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::findorFail($id);
+        $post->delete();
+        return redirect('/creator/all-posts');
     }
 
-    
+    public function trashed()
+    {
+        $post = Post::onlyTrashed()->paginate(15);
+        $title = 'Trashed Bin';
+        return view ('creator.post-bin', compact('title'))->with('post',$post);
+    }
+
+    public function restore($id)
+    {
+        $post = Post::withTrashed()->where('id', $id)->first();
+
+        $post->restore();
+
+        return redirect('/creator/contents-bin');
+    }
+
+    Public function delete($id)
+    {
+        $post = Post::withTrashed()->where('id', $id)->first();
+
+        $post->forceDelete();
+
+        return redirect('/creator/contents-bin');
+    }
 }

@@ -2,7 +2,7 @@
 
 
 @section('title')
-	All Posts | MonstaJamss
+	All Trashed Posts | MonstaJamss
 @endsection
 
 
@@ -11,13 +11,14 @@
 
 <?php 
 $id = '1';
+$sum = DB::table('posts')->whereNotNull('deleted_at')->count();
 ?>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Property</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Posts</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -33,8 +34,8 @@ $id = '1';
   	<div class="col-md-12">
 		<div class="card">
 		  <div class="card-header">
-		    <h4 class="card-title"> All Post ( {{$pcount}} )
-				<a href="{{ route('posts.create') }}" class="btn btn-success float-right">Add Post</a>
+		    <h4 class="card-title"> Trashed Posts ( {{$sum}} )
+				
 		    </h4>
 		  </div>
 		  	<div class="card-body">
@@ -42,56 +43,42 @@ $id = '1';
 			      <table class="table">
 			        <thead class=" text-primary">
 			          <th>Title</th>
-					  <th>Category</th>
+					  <th>Categories</th>
 					  <th>Date</th>
-			          <th>Username</th>
-			          <th>Price</th>
-			          <th>Edit</th>
-			          <th>Bin</th>
+			          <th>Author</th>
+			          <th>Restore</th>
+			          <th>Delete</th>
 			        </thead>
 			        <tbody>
-			        	@foreach ($post as $posts)
+			        	@forelse ($post as $posts)
 			          <tr>
 			            <td><a href="" target="_blank">{{ $posts->title }}</a></td>
 						<td>{{ $posts->category()->first()->name }}</td>
-						<td>Published<br>{{ $posts->created_at->format('m/d/Y') }}</td>
+						<td>{{ $posts->deleted_at->format('m/d/Y') }}</td>
 			            <td>{{$posts->user->username}}</td>
-			            <td>₦{{number_format($posts->price, 2, '.', ',')}}</td>
 
 			            <td>
-			            	@if(Auth()->check())
-                			@if(auth()->user()->id == $posts->user_id)
-			            	<a href="/admin-editproperty/{{ $posts->id }}" class="btn btn-success">Edit</a>
-			            	@endif
-			            	@endif
+			            	<a href="{{ route('posts.restore', $posts->id) }}" class="btn btn-success">Restore</a>
 			            </td>
 			            <td>
-			            	<form action="/delete-post/{{ $posts->id }}" method="post">
+			            	<form action="/delete-permanently/{{ $posts->id }}" method="post">
 			        			{{ csrf_field() }}
 			        			{{ method_field('DELETE') }}
-			            		<button type="submit" class="btn btn-danger">Bin</button>
+			            		<button type="submit" class="btn btn-danger">Delete Permanently</button>
 			            	</form>
 			            </td>
 			          </tr>
-			          @endforeach
+                      @empty <h2>Bin Empty</h2>
+			          @endforelse
 			        </tbody>
 			      </table>
 			    </div>
 			</div>
 		</div>
-		<nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-				{{ $post->onEachSide(1)->links() }} 
-			</ul>
-		</nav>
+		
   	</div>         
 </div>
 
 
   
-@endsection
-
-
-@section('scripts')
-
 @endsection

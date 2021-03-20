@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    &copy Kareer Circle. All rights reserved.
+                    &copy Musigent. All rights reserved.
                 </div>
             </div>
         </div>
