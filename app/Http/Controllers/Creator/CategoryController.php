@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 
-class CreatorController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,18 +15,9 @@ class CreatorController extends Controller
      */
     public function index()
     {
-        return view('creator.index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $category = Category::all();
-       
+        $title ='Category';
+        $cat = Category::latest()->paginate(15);
+        return view('creator.add-category', compact('title'))->with('cat',$cat);
     }
 
     /**
@@ -37,7 +28,11 @@ class CreatorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cat = new Category;
+        $cat->name = $request->input('name');
+
+        $cat->save();
+        return redirect('creator/add-category');
     }
 
     /**

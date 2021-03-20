@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Models\User;
 
 
 class HomeController extends Controller
@@ -14,8 +16,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-       
-        return view('pages.welcome');
+        $title = "Welcome to Musigent";
+        $post = Post::latest()->paginate(6);
+        return view('pages.welcome', compact('post','title'));
     }
 
     /**

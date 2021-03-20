@@ -16,12 +16,30 @@
 		<div id="mySidenav" class="sidenav">
 			<a href="javascript:void(0)" class="closebtn" onclick="navigate()">&times;</a>
 			<div class="links">
+				@guest
                 <a href="/login">Login</a>
                 <a href="/register">Register</a>
 				<a href="#">About</a>
 				<a href="#">Services</a>
 				<a href="#">Clients</a>
 				<a href="#">Contact</a>
+				@endguest
+				@auth
+				<a href="/">Welcome, {{ Auth::user()->username }}</a>
+				<a href="#">About</a>
+				<a href="#">Services</a>
+				<a href="#">Clients</a>
+				<a href="#">Contact</a>
+				
+				<a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+				{{ __('Logout') }}
+				</a>
+				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:none;">
+				@csrf
+				</form>
+				
+				@endauth
 			</div>
 		</div>
         <div id="content">

@@ -29,12 +29,12 @@
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="{{asset('dashboard-css/js/core/jquery.min.js')}}"></script>
+  
   <script src="{{asset('dashboard-css/js/core/popper.min.js')}}"></script>
   <script src="{{asset('dashboard-css/js/core/bootstrap.min.js')}}"></script>
   <script src="{{asset('dashboard-css/js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
   <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+ 
   <!-- Chart JS -->
   <script src="{{asset('dashboard-css/js/plugins/chartjs.min.js')}}"></script>
   <!--  Notifications Plugin    -->

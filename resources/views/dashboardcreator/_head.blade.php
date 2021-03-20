@@ -7,51 +7,85 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Now UI Dashboard by Creative Tim
+    Creator's Dashboard
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ 
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
+<link href="http://real-estate-lara.herokuapp.com/assets/css/select2/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <!-- CSS Files -->
   <link href="{{asset('dashboard-css/css/bootstrap.min.css')}}" rel="stylesheet" />
   <link href="{{asset('dashboard-css/css/now-ui-dashboard.css?v=1.5.0')}}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{asset('dashboard-css/demo/demo.css')}}" rel="stylesheet" />
+<link rel="stylesheet" href="{{asset('dashboard-css/css/text-editor.css')}}">
 </head>
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="orange">
+    <div class="sidebar" data-color="yellow">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-          CT
+        <a href="/creator" class="simple-text logo-normal">
+          Creator's Admin Panel
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+      </div>
+      <div class="logo">
+        <a href="/" class="simple-text logo-normal">
+          Back to Website
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
-          <li class="active ">
-            <a href="./dashboard.html">
+          <li class="{{ 'creator' == request()->path() ? 'active' : '' }} ">
+            <a href="/creator">
               <i class="now-ui-icons design_app"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="./icons.html">
+            <a data-toggle="collapse" href="#laravelExamples" aria-expanded="false" class="collapased">
               <i class="now-ui-icons education_atom"></i>
-              <p>Icons</p>
+              <p>
+                All Posts
+                <b class="caret"></b>
+              </p>
             </a>
+            <div class="collapse" id="laravelExamples">
+              <ul class="nav">
+                <li class="{{ 'creator/all-posts' == request()->path() ? 'active' : '' }}">
+                  <a href="/creator/all-posts">
+                    <i class="fa fa-tasks"></i>
+                    <p>All Posts</p>
+                  </a>
+                </li>
+                <li class="{{ 'create' == request()->path() ? 'active' : '' }}">
+                  <a href="/create">
+                    <i class="fa fa-plus"></i>
+                    <p>Create Posts</p>
+                  </a>
+                </li>
+                <li class="{{ 'creator/contents-bin' == request()->path() ? 'active' : '' }}">
+                  <a href="/creator/contents-bin">
+                    <i class="fa fa-trash"></i>
+                    <p>Posts Bin</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </li>
-          <li>
-            <a href="./map.html">
+          <li class="{{ 'creator/add-category' == request()->path() ? 'active' : '' }}">
+            <a href="/creator/add-category">
               <i class="now-ui-icons location_map-big"></i>
-              <p>Maps</p>
+              <p>Add Category</p>
             </a>
           </li>
           <li>
@@ -65,24 +99,7 @@
               <i class="now-ui-icons users_single-02"></i>
               <p>User Profile</p>
             </a>
-          </li>
-          <li>
-            <a href="./tables.html">
-              <i class="now-ui-icons design_bullet-list-67"></i>
-              <p>Table List</p>
-            </a>
-          </li>
-          <li>
-            <a href="./typography.html">
-              <i class="now-ui-icons text_caps-small"></i>
-              <p>Typography</p>
-            </a>
-          </li>
-          <li class="active-pro">
-            <a href="./upgrade.html">
-              <i class="now-ui-icons arrows-1_cloud-download-93"></i>
-              <p>Upgrade to PRO</p>
-            </a>
+          </li>>
           </li>
         </ul>
       </div>

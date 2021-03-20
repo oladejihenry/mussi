@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Creator;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Models\User;
 use App\Models\Category;
+use Auth;
 
-class CreatorController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +18,11 @@ class CreatorController extends Controller
      */
     public function index()
     {
-        return view('creator.index');
+        $title ='All Post';
+        $post = Auth::user()->post()->latest()->paginate(15);
+        $category = Category::all();
+        $pcount = Post::count();
+        return view('creator.all-post', ['title'=>$title,'post'=>$post, 'category' => $category, 'pcount' => $pcount]);
     }
 
     /**
@@ -25,8 +32,9 @@ class CreatorController extends Controller
      */
     public function create()
     {
-        $category = Category::all();
-       
+        $cat = Category::all();
+        $title = "Add New Post";
+        return view('creator.create', compact('title'))->with(['cat' => $cat]);
     }
 
     /**
@@ -37,7 +45,16 @@ class CreatorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'title'=>'required|min:10',
+            'body' => 'required|min:20',
+            'category' => 'required',
+        ]);
+
+        $postc=auth()->user()->post()->create($request->all());
+        $postc->category()->attach($request->category);
+
+        return redirect('/creator/all-posts')->with('success','Updated');
     }
 
     /**
@@ -84,4 +101,6 @@ class CreatorController extends Controller
     {
         //
     }
+
+    
 }

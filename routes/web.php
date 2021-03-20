@@ -28,9 +28,20 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::group(['middleware' => ['admin', 'auth']], function(){
-    Route::get('/creator', 'Creator\CreatorController@index');
+    //Posts
+    Route::get('/creator/all-posts','Creator\PostController@index');
+    Route::post('/save-post', 'Creator\PostController@store');
+
+
+    //Category
+    Route::get('/creator/add-category', 'Creator\CategoryController@index');
+    Route::post('/save-category','Creator\CategoryController@store');
 });
 
+// Dashboard Page
+Route::get('/creator', 'Creator\CreatorController@index')->middleware(['admin', 'auth']);
 
+//Dashboard Create
+Route::get('/create', 'Creator\PostController@create')->name('posts.create')->middleware('auth');
 
 require __DIR__.'/auth.php';
