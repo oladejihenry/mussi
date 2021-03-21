@@ -10,6 +10,7 @@ use App\Models\Category;
 use Auth;
 use Image;
 use Storage;
+use Illuminate\Support\Facades\File;
 class PostController extends Controller
 {
     /**
@@ -52,9 +53,16 @@ class PostController extends Controller
             'category' => 'required',
         ]);
 
+        $cover = $request->file('image');
+        $extension = $cover->getClientOriginalExtension();
+        Storage::disk('public')->put($cover->getClientOriginalName(),  File::get($cover));
+
         $postc=auth()->user()->post()->create($request->all());
         $postc->category()->attach($request->category);
-       
+
+        
+        $postc->image = $cover->getClientOriginalName();
+        $postc->save();
 
         return redirect('/creator/all-posts')->with('success','Updated');
     }

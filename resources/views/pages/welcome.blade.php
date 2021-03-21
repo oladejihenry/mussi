@@ -59,7 +59,7 @@
             <div class="col-md-3">
                 <a href="#" class="company">
                     <div class="image">
-                        <img src="http://www.peoplesdailyng.com/wp-content/uploads/2014/02/Guaranty-Trust-Bank-gtbank-logo.jpg" >
+                        <img src="{{url('uploads/'.$posts->image)}}">
                     </div>
                     <h6>{{ $posts->title }}</h6>
                     <!-- <a class="btn btn-block btn-primary" href="#" role="button">Review</a> -->
