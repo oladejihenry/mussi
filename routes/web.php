@@ -71,7 +71,7 @@ Route::get('/searchpost', 'HomeController@search')->name('searchpost');
 Route::get('/keyboard', 'HomeController@key');
 
 
- Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
+ Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay')->middleware('auth');
 
 // // The callback url after a payment
 

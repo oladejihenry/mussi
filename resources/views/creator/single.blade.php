@@ -42,6 +42,7 @@
                                     <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8">
                                        
                                         <input type="hidden" name="email" value="">
+                                        <input type="hidden" value="">
                                         <input type="hidden" name="orderID" value="{{ $post->id }}">
                                         <input type="hidden" name="amount" value="{{ $post->price }}">
 
