@@ -57,7 +57,7 @@
         <div class="row">
             @foreach ($post as $posts)
             <div class="col-md-3">
-                <a href="#" class="company">
+                <a href="{{ route('posts.show', ['category'=>strtolower($posts->category()->first()->name), 'post'=>$posts->slug]) }}" class="company">
                     <div class="image">
                         <img src="{{url('uploads/'.$posts->image)}}">
                     </div>

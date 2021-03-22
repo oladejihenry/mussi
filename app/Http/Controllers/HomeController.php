@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Category;
 
 
 class HomeController extends Controller
@@ -48,9 +49,19 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    // public function show($slug)
+    // {
+    //     $title = "Single Post";
+    //     $post = Post::where('slug', $slug)
+    //         ->firstOrFail()
+    //     ;
+    //     return view ('post.single', compact('post','title'));
+    // }
+
+    public function show(Category $category, Post $post)
     {
-        //
+        $title = "Single Post";
+        return view('creator.single', compact('title','category','post'));
     }
 
     /**

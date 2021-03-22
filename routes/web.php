@@ -48,4 +48,9 @@ Route::get('/creator', 'Creator\CreatorController@index')->middleware(['admin', 
 //Dashboard Create
 Route::get('/create', 'Creator\PostController@create')->name('posts.create')->middleware('auth');
 
+
+//Single Page
+// Route::get('/{category:name}', 'HomeController@show')->name('posts.show');
+Route::get('/{category:name}/{post:slug}','HomeController@show')->name('posts.show');
+
 require __DIR__.'/auth.php';
