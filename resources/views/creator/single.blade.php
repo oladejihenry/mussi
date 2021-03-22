@@ -41,13 +41,13 @@
                                     @guest
                                     <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8">
                                        
-                                        <input type="hidden" name="email" value="{{ Auth::user()->email }}">
+                                        <input type="hidden" name="email" value="">
                                         <input type="hidden" name="orderID" value="{{ $post->id }}">
                                         <input type="hidden" name="amount" value="{{ $post->price }}">
 
                                         <input type="hidden" name="quantity" value="1">
                                         <input type="hidden" name="currency" value="NGN">
-                                        <input type="hidden" name="metadata" value="{{ json_encode($array = ['user_id' => Auth::user()->id,]) }}" >
+                                        <input type="hidden" name="metadata" value="{{ json_encode($array = ['user_id' => '',]) }}" >
                                         <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}">
                                          {{ csrf_field() }}
                                         <button type="submit"  class="btn btn-block btn-primary" value="Buy">Buy Now</button>
