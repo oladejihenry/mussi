@@ -85,14 +85,21 @@
                 <div class="form-group">
                 <label><b>Youtube Video:</b></label>
                 <br>
-                <textarea name="youtube" cols="30" rows="10"></textarea>
+                <textarea name="youtube" cols="30" rows="10" style="width: 50%;"></textarea>
                 </div>
 				<br>
 				<div>
 				  <label><b>Price:</b></label>
                   <br>
-				  <input type="text" value="₦" disabled style="width:20px;">
+				  <input type="text" value="£" disabled style="width:20px;">
 				  <input type="text" name="price" value="0.00">
+			</div>
+			<br>
+			<div>
+				  <label><b>Phone Number:</b></label>
+                  <br>
+				  
+				  <input type="text" name="phone_number">
 			</div>
 				
 				<br>

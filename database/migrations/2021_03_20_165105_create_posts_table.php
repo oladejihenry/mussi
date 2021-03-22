@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration
             $table->string('slug');
             $table->text('youtube');
             $table->decimal('price', 11,2);
+            $table->string('phone_number');
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->softDeletes('deleted_at',0);

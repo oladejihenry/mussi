@@ -115,12 +115,8 @@ class PostController extends Controller
         $post->body = $request->input('body');
         $post->price = $request->input('price');
         $post->youtube = $request->input('youtube');
-
-        $cover= $request->file('image');
-        $extension = $cover->getClientOriginalExtension();
-
-        Storage::disk('public')->put($cover->getClientOriginalName(),  File::get($cover));
-        $post->image = $cover->getClientOriginalName();        
+        $post->phone_number = $request->input('phone_number');
+      
         
 
         $post->update($request->all());

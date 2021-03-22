@@ -64,4 +64,10 @@ Route::get('/create', 'Creator\PostController@create')->name('posts.create')->mi
 // Route::get('/{category:name}', 'HomeController@show')->name('posts.show');
 Route::get('/{category:name}/{post:slug}','HomeController@show')->name('posts.show');
 
+
+//Search Posts
+Route::get('/searchpost', 'HomeController@search')->name('searchpost');
+
+Route::get('/keyboard', 'HomeController@key');
+
 require __DIR__.'/auth.php';

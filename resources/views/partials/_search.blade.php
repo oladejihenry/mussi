@@ -14,9 +14,9 @@
 	</head>
 	<body>
 		<div id="mySidenav" class="sidenav">
-			<a href="javascript:void(0)" class="closebtn" onclick="navigate()">&times;</a>
+		  <a href="javascript:void(0)" class="closebtn" onclick="navigate()">&times;</a>
 			<div class="links">
-				@guest
+            @guest
                 <a href="/login">Login</a>
                 <a href="/register">Register</a>
 				<a href="#">About</a>
@@ -26,6 +26,7 @@
 				@endguest
 				@auth
 				<a href="/">Welcome, {{ Auth::user()->username }}</a>
+                <a href="/">Home</a>
 				<a href="#">About</a>
 				<a href="#">Services</a>
 				<a href="#">Clients</a>
@@ -42,13 +43,27 @@
 				@endauth
 			</div>
 		</div>
-        <div id="content">
-        <section id="splash">
-            <nav>
-                <div>
-                    <h4><a href="/" style="text-decoration: none;"> Musigent</a></h4>
-                    
-                    <i class="fa fa-2x fa-bars float-right" onclick="navigate()"></i>
-                </div>
-            </nav>
-            
+		
+		<div id="content">
+			<nav class="general-nav">
+				<div class="row">
+					<div class="col-1">
+                    <h4><a href="/" style="text-decoration: none; color:white;"> Musigent</a></h4>
+					</div>
+
+					<div class="col-10" style="padding: 0 45px;">
+						<form class="row" method="GET" action="{{ route('searchpost') }}">
+						  <div class="form-group col-10 no-padding">
+						    <input type="text" name="query" value="{{ request()->input('query') }}" class="form-control" placeholder="Search by post">
+						  </div>
+						  <div class="form-group col-2 no-padding">
+						  	<button type="submit" class=" btn btn-block btn-primary"><i class="fa fa-search"></i></button>
+						  </div>
+						</form>
+					</div>
+
+					<div class="col-1">
+						<i class="fa fa-2x fa-bars float-right" onclick="navigate()"></i>
+					</div>
+				</div>
+			</nav>

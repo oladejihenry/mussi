@@ -75,7 +75,7 @@ Edit Post Page | MonstaJamss
               <div class="form-group">
                 <label><b>Youtube Video:</b></label>
                 <br>
-                <textarea name="youtube" cols="30" rows="10">{{ $post->youtube }}</textarea>
+                <textarea name="youtube" cols="30" rows="10" style="width: 50%;">{{ $post->youtube }}</textarea>
                 </div>
 			  <br>
 			  <div>
@@ -84,7 +84,12 @@ Edit Post Page | MonstaJamss
 				  <input type="text" name="price" value="{{$post->price}}">
 				</div>
 				<br>
-				
+				<div>
+				  <label><b>Phone Number:</b></label>
+                  <br>
+				  
+				  <input type="number" name="phone_number" value="{{$post->phone_number}}">
+			</div>
 			  <br>
 			  <br>
 	          <div>

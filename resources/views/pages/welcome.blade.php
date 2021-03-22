@@ -5,9 +5,9 @@
 <div class="container">
     <h1 class="desktop">Want to Learn and Hire? <span>Search Here</span></h1>
     <h4 class="mobile">Want to Learn and Hire? <span>Search Here</span></h4>
-    <form class="form-inline">
+    <form class="form-inline" method="GET" action="{{ route('searchpost') }}">
         <div class="form-group col-md-9">
-        <input type="text" class="form-control" placeholder="Search by company's name or location">
+        <input type="search" name="query" value="{{ request()->input('query') }}" class="form-control" placeholder="Search by post">
         </div>
         <button type="submit" class="btn btn-primary col-md-3">Search</button>
     </form>	

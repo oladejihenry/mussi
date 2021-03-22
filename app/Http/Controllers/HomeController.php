@@ -97,4 +97,29 @@ class HomeController extends Controller
     {
         //
     }
+
+    public function search(Request $request)
+    {
+        $title = "Search Result";
+        $query = $request->input('query');
+
+        $search = Post::where('title', 'like', "%$query%")->paginate(15);
+        return view('pages.search-results',compact('title'))->with('search', $search);
+    }
+
+    public function key(Request $request, $category=null)
+    {
+        if($category){
+            $categories = Category::with('posts')->latest()->get();
+            $category = Category::where('url', '=', $category)->first();
+            $posts = Post::latest()->paginate(15);
+            $posts = $category ? $category->posts()->latest()->paginate(15): [];
+
+        }else{
+            $category = Category::where('name', '=', $category)->first();
+            $posts= Post::latest()->paginate(15);
+            $categories = Category::with('posts')->latest()->get();
+        }
+        return view('pages.category',compact('category', 'categories', 'posts'));
+    }
 }
