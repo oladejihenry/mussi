@@ -19,7 +19,7 @@ Route::get('/', 'HomeController@index');
 
 
 Route::group(['middleware' => ['auth']], function (){
-    Route::get('/client', 'Client\ClientController@index');
+    Route::get('/client', 'HomeController@index');
     Route::post('/client-save', );
 });
 
@@ -69,5 +69,16 @@ Route::get('/{category:name}/{post:slug}','HomeController@show')->name('posts.sh
 Route::get('/searchpost', 'HomeController@search')->name('searchpost');
 
 Route::get('/keyboard', 'HomeController@key');
+
+
+ Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
+
+// // The callback url after a payment
+
+ Route::get('/payment/callback',  'PaymentController@handleGatewayCallback')->name('callback');
+
+// Route::post('/pay', 'FlutterwaveController@initialize')->name('pay');
+// // The callback url after a payment
+// Route::get('/rave/callback', [FlutterwaveController::class, 'callback'])->name('callback');
 
 require __DIR__.'/auth.php';

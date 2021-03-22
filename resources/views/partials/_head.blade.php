@@ -19,17 +19,11 @@
 				@guest
                 <a href="/login">Login</a>
                 <a href="/register">Register</a>
-				<a href="#">About</a>
-				<a href="#">Services</a>
-				<a href="#">Clients</a>
-				<a href="#">Contact</a>
+				
 				@endguest
 				@auth
 				<a href="/">Welcome, {{ Auth::user()->username }}</a>
-				<a href="#">About</a>
-				<a href="#">Services</a>
-				<a href="#">Clients</a>
-				<a href="#">Contact</a>
+				
 				
 				<a href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
