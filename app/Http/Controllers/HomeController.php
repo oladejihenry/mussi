@@ -17,7 +17,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $title = "Welcome to Musigent";
+        $title = 'Welcome to Musigent';
         $post = Post::latest()->paginate(6);
         return view('pages.welcome', compact('post','title'));
     }
