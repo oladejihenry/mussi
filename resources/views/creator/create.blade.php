@@ -83,7 +83,7 @@
 				</div>
                 <br>
                 <div class="form-group">
-                <label><b>Youtube Video:</b>Video Size Should Be 740x360</label>
+                <label><b>Youtube Video:</b> <b style="color:red;">Video Size Should Be 740x360</b> </label>
                 <br>
                 <textarea name="youtube" cols="30" rows="10" style="width: 50%;"></textarea>
                 </div>
