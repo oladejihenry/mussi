@@ -10,6 +10,7 @@ use App\Models\Category;
 use Auth;
 use Image;
 use Storage;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
 class PostController extends Controller
 {
@@ -86,7 +87,12 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        if(Auth::user()->id == Post::find($id)->user->id)
+        {
+            $post = Post::findorFail($id);
+            $title = "Edit Post";
+            return view('creator.edit', compact('post', 'title'));
+        }
     }
 
     /**
@@ -98,7 +104,32 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::findorFail($id);
+
+        
+
+        $user = auth()->user();
+        $oldPicture = $user->image;
+
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->price = $request->input('price');
+        $post->youtube = $request->input('youtube');
+
+        $cover= $request->file('image');
+        $extension = $cover->getClientOriginalExtension();
+
+        Storage::disk('public')->put($cover->getClientOriginalName(),  File::get($cover));
+        $post->image = $cover->getClientOriginalName();        
+        
+
+        $post->update($request->all());
+
+        Storage::disk('public')->delete($oldPicture);
+
+     
+
+        return redirect('/creator/all-posts');
     }
 
     /**
@@ -137,5 +168,21 @@ class PostController extends Controller
         $post->forceDelete();
 
         return redirect('/creator/contents-bin');
+    }
+
+    private function storeImage($post)
+    {
+        if (request()->has('image')){
+            $original = request()->file('image')->getClientOriginalName();
+
+            $post->update([
+                'image' => request()->file('image')->storeAs('uploads', $original),
+            ]);
+
+            $image = Image::make(request()->file('image'));
+            Storage::disk('public')->put('uploads', $image->stream(), 'public');
+            $image = Storage::disk('public')->temporaryUrl("uploads", Carbon::now()->addMinutes(5));
+            $image = 'http://localhost/images';
+        }
     }
 }

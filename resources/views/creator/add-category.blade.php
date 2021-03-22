@@ -1,5 +1,9 @@
 @extends('pub')
 
+@section('title')
+	Edit Category | Musigent
+@endsection
+
 @section('content')
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -53,10 +57,10 @@
 			            <td>{{ $row->id }}</td>
 			            <td>{{ $row->name }}</td>
 			            <td>
-			            	<a href="/role-propertyedit/{{ $row->id }}" class="btn btn-success">Edit</a>
+			            	<a href="/category-edit/{{ $row->id }}" class="btn btn-success">Edit</a>
 			            </td>
 			            <td>
-			            	<form action="/property-delete/{{ $row->id }}" method="post">
+			            	<form action="/category-delete/{{ $row->id }}" method="post">
 			        			{{ csrf_field() }}
 			        			{{ method_field('DELETE') }}
 			            		<button type="submit" class="btn btn-danger">Delete</button>

@@ -87,19 +87,19 @@
               <i class="now-ui-icons location_map-big"></i>
               <p>Add Category</p>
             </a>
-          </li>
+          <!-- </li>
           <li>
             <a href="./notifications.html">
               <i class="now-ui-icons ui-1_bell-53"></i>
               <p>Notifications</p>
             </a>
-          </li>
-          <li>
-            <a href="./user.html">
+          </li> -->
+          <li class="{{ 'creator/profile' == request()->path() ? 'active' : '' }}">
+            <a href="/creator/profile">
               <i class="now-ui-icons users_single-02"></i>
               <p>User Profile</p>
             </a>
-          </li>>
+          </li>
           </li>
         </ul>
       </div>

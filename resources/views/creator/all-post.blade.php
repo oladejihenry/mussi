@@ -61,7 +61,7 @@ $id = '1';
 			            <td>
 			            	@if(Auth()->check())
                 			@if(auth()->user()->id == $posts->user_id)
-			            	<a href="/admin-editproperty/{{ $posts->id }}" class="btn btn-success">Edit</a>
+			            	<a href="/edit-post/{{ $posts->id }}" class="btn btn-success">Edit</a>
 			            	@endif
 			            	@endif
 			            </td>
